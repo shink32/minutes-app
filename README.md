@@ -80,6 +80,7 @@ belongs_to :meeting
 | user        | references | null: false, foreign_key: true |
 | meeting     | references | null: false, foreign_key: true |
 
+
 ### Association
 belongs_to :user
 belongs_to :meeting
