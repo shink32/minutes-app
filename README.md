@@ -44,7 +44,7 @@ has_many :meeting_users
 has_many :meetings, thorough: meeting_users
 had_many :contents
 
-
+ 
 ## meetings テーブル
 
 | Column  | Type    | Options     |
