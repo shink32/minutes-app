@@ -15,7 +15,7 @@
       <div class="main-name">
         <% current_user.meetings.each do |meeting| %>
         <div class="meeting">
-        <%= link_to meeting.title, contents_path %>
+        <%= link_to meeting.title, meeting_contents_path %>
       </div>
        <% end %>
       </div>
@@ -43,7 +43,7 @@
 
   <div class="bottom-form">
     下のフォーム
-    <%= form_with model: @content, local: true do |f| %>
+    <%= form_with model: [@meeting, @content], local: true do |f| %>
       <%= f.text_field :writing, placeholder: '記事を記載してください', class:'col-10'%>
       <%= f.submit '投稿する', class:'contents-writing-btn'%>
       <% end %>

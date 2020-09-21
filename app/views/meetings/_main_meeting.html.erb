@@ -5,10 +5,9 @@
     <div class="main-name">
     <% @meetings.each do |meeting| %>
     <div class="meeting">
-    <%= link_to meeting.title, contents_path %>
+    <%= link_to meeting.title, meeting_contents_path(meeting) %>
       </div>
     <% end %>
-    <%= link_to "議事録1",contents_path %>
 
     </div>
         <div class="main-name">
