@@ -1,6 +1,25 @@
-<div class="chat-room-form">
-  <h1>新規meeting作成</h1>
-  <%=form_with model: @meeting, local: true do |f|%>
-  <%=f.text_field :title, placeholder: "議事録名を記入してください" %>
-  <%=f.submit '新規作成'%>
-  <% end %>
+<div class="wrapper">
+
+  <div class="header">
+      <%= render "shared/header" %>
+  </div>
+
+
+  <div class="chat-room-form">
+    <h1>新規meeting作成</h1>
+    <div class="form">
+    <%=form_with model: @meeting, local: true do |f|%>
+      <%=f.text_field :title, placeholder: "議事録名を記入してください" %>
+      <select name="meeting[user_ids][]">
+        <option value="">議事録を共有するユーザーを選択してください</option>
+        <% User.all.where.not(id: current_user.id).each do |user| %>
+          <option value=<%=user.id%>><%= user.name %></option>
+        <% end %>
+      </select>
+    <input name="meeting[user_ids][]"type="hidden" value=<%=current_user.id%>>
+    <%=f.submit '新規作成'%>
+    <% end %>
+    </div>
+  </div>
+
+</div>

@@ -11,14 +11,17 @@
 
 .side-bar-left {
   background-color: lightslategray;
+  overflow: auto;
 }
 
 .main-contents {
   background-color: mediumaquamarine;
+  overflow: auto;
 }
 
 .side-bar-right {
   background-color: lavender;
+  overflow: auto;
 }
 
 .bottom-form {

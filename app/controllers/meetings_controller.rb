@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
   def index
+    @meetings = Meeting.all
   end
 
   def new
@@ -7,14 +8,16 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    @meetings = Meeting.create(meeting_params)
-    if @meetings.save
+    @meeting = Meeting.create(meeting_params)
+    if @meeting.save
       redirect_to root_path 
+    else
+      render :new
     end
   end
 
   private
   def meeting_params
-    params.require(:meeting).permit(:title)
+    params.require(:meeting).permit(:title, user_ids:[])
   end
 end

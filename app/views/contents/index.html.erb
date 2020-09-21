@@ -7,7 +7,18 @@
   </div>
   <div class="contents-middle">
     <div class="col-2 side-bar-left">
+      <div class="create">
+      <%= link_to "新規議事録作成", new_meeting_path %>
+      </div>
+
       議事録一覧
+      <div class="main-name">
+        <% current_user.meetings.each do |meeting| %>
+        <div class="meeting">
+        <%= link_to meeting.title, contents_path %>
+      </div>
+       <% end %>
+      </div>
     </div>
 
     <div class="col-8 main-contents">
@@ -22,12 +33,17 @@
 
     <div class="col-2 side-bar-right">
       参加者名
+          <% User.all.each do |user| %>
+            <div class="use-name">
+              <%= user.name %>
+            </div>
+          <% end %>
     </div>
   </div>
 
   <div class="bottom-form">
     下のフォーム
-    <%= form_with url: @content, local: true do |f| %>
+    <%= form_with model: @content, local: true do |f| %>
       <%= f.text_field :writing, placeholder: '記事を記載してください', class:'col-10'%>
       <%= f.submit '投稿する', class:'contents-writing-btn'%>
       <% end %>

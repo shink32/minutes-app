@@ -3,6 +3,11 @@
         議事録
     </div>
     <div class="main-name">
+    <% @meetings.each do |meeting| %>
+    <div class="meeting">
+    <%= link_to meeting.title, contents_path %>
+      </div>
+    <% end %>
     <%= link_to "議事録1",contents_path %>
 
     </div>
