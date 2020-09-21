@@ -1,0 +1,27 @@
+.contents-header {
+  background-color: lightblue;
+  height: 60px;
+}
+
+.contents-middle {
+  display: flex;
+  height: 50vw;
+
+}
+
+.side-bar-left {
+  background-color: lightslategray;
+}
+
+.main-contents {
+  background-color: mediumaquamarine;
+}
+
+.side-bar-right {
+  background-color: lavender;
+}
+
+.bottom-form {
+  background-color: lemonchiffon;
+  height: 60px;
+}
