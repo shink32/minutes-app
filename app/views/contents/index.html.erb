@@ -12,6 +12,12 @@
 
     <div class="col-8 main-contents">
       内容表示
+      <% @contents.each do |content|%>
+      <div class="content_post">
+      <%= content.writing %>
+      </div>
+      <% end%>
+
     </div>
 
     <div class="col-2 side-bar-right">
@@ -21,7 +27,7 @@
 
   <div class="bottom-form">
     下のフォーム
-    <%= form_with model: @contents, local: true do |f| %>
+    <%= form_with url: @content, local: true do |f| %>
       <%= f.text_field :writing, placeholder: '記事を記載してください', class:'col-10'%>
       <%= f.submit '投稿する', class:'contents-writing-btn'%>
       <% end %>
