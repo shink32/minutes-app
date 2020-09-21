@@ -4,17 +4,17 @@ class ContentsController < ApplicationController
   end
 
   def new
-    @content.new
   end
 
   def create
-    @content = Content.create(contents_params)
-    if @content.save
+    @contents = Content.create(contents_params)
+    if @contents.save
       redirect_to contents_path
     else
       redirect_to meetings_index_path
     end
   end
+
 
   private
   def contents_params

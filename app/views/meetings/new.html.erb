@@ -1,0 +1,6 @@
+<div class="chat-room-form">
+  <h1>新規meeting作成</h1>
+  <%=form_with model: @meeting, local: true do |f|%>
+  <%=f.text_field :title, placeholder: "議事録名を記入してください" %>
+  <%=f.submit '新規作成'%>
+  <% end %>
