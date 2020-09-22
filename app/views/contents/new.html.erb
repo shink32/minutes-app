@@ -1,0 +1,8 @@
+<div class="field">
+     <%= form.label :content %>
+-    <%= form.text_area :content %>
++    <%= form.hidden_field :content %>
++    <trix-editor input="document_content" class="trix-content"></trix-editor>
+   </div>
+<div class="actions">
+  <%= sanitize @sample.blog %>
