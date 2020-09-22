@@ -8,7 +8,7 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    @meeting = Meeting.create(meeting_params)
+    @meeting = Meeting.new(meeting_params)
     if @meeting.save
       redirect_to root_path 
     else

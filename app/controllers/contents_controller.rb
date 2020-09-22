@@ -1,10 +1,9 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content.all
-    @meetings = Meeting.all
-
     @content = Content.new
     @meeting = Meeting.find(params[:meeting_id])
+    @contents = @meeting.contents.includes(:user)
+    @meetings = Meeting.all
   end
 
   def new
@@ -15,9 +14,10 @@ class ContentsController < ApplicationController
     @meeting = Meeting.find(params[:meeting_id])
     @content = @meeting.contents.new(contents_params)
     if @content.save
-      redirect_to meeting_contents_path
+      redirect_to meeting_contents_path(@meeting)
     else
-      redirect_to meeting_contents_path
+      @contents = @meeting.contents.includes(:user)
+      render :index
     end
   end
 

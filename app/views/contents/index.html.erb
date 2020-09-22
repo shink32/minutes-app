@@ -15,7 +15,7 @@
       <div class="main-name">
         <% current_user.meetings.each do |meeting| %>
         <div class="meeting">
-        <%= link_to meeting.title, meeting_contents_path %>
+        <%= link_to meeting.title, meeting_contents_path(meeting) %>
       </div>
        <% end %>
       </div>
@@ -23,6 +23,7 @@
 
     <div class="col-8 main-contents">
       内容表示
+      <% @meeting.title %>
       <% @contents.each do |content|%>
       <div class="content_post">
       <%= content.writing %>
