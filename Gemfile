@@ -62,3 +62,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
 
+group :production do
+  gem 'rails_12factor'
+end
