@@ -6,6 +6,7 @@ class CreateContents < ActiveRecord::Migration[6.0]
       t.string     :closing_day
       t.references :user,          foreign_key: true 
       t.references :meeting,       foreign_key: true 
+      t.boolean    :checked
       t.timestamps
     end
   end

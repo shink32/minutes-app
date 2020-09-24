@@ -16,6 +16,17 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def checked
+    content = Content.find(params[:id])
+    if content.checked
+      content.update(checked: false)
+    else
+      content.update(checked: true)
+    end
+  end
+
+
+
   private
   def meeting_params
     params.require(:meeting).permit(:title, user_ids:[])
