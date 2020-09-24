@@ -12,19 +12,14 @@
       <%= render "main_meeting"%>
     </div>
     
-        <h1>TogetherJSサンプル</h1>
-<button onclick="TogetherJS(this); return false;">TogetherJSを起動！</button>
-    <script src=”js/together.js”></script>
-      <script>
-          TogetherJS( this );
-              // 音声ボタン非表示
-    var TogetherJSConfig_disableWebRTC = true;
-          // 初動のポップアップを非表示
-      var TogetherJSConfig_suppressInvite = true;
-                // 参加確認のポップアップを非表示にして自動接続
-      var TogetherJSConfig_suppressJoinConfirmation = true;
-      </script>
-      
+  <script>
+  // TogetherJS configuration would go here, but we'll talk about that
+  // later
+  </script>
+  <script src="https://togetherjs.com/togetherjs-min.js"></script>
+  
+<button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+
 </div>
 
 
