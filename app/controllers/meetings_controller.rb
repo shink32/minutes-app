@@ -16,6 +16,12 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def destroy
+    meeting = Meeting.find(params[:id])
+    meeting.destroy
+    redirect_to root_path
+  end
+
   def checked
     content = Content.find(params[:id])
     if content.checked
