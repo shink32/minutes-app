@@ -24,19 +24,12 @@
     <div class="col-8 main-contents">
       内容表示
       <% @meeting.title %>
-    <h1>TogetherJSサンプル</h1>
-<button onclick="TogetherJS(this); return false;">TogetherJSを起動！</button>
-    <script src=”js/together.js”></script>
-      <script>
-          TogetherJS( this );
-              // 音声ボタン非表示
-    var TogetherJSConfig_disableWebRTC = true;
-          // 初動のポップアップを非表示
-      var TogetherJSConfig_suppressInvite = true;
-                // 参加確認のポップアップを非表示にして自動接続
-      var TogetherJSConfig_suppressJoinConfirmation = true;
-      </script>
-
+        <div class="bottom-contents">
+        <% @contents.each do |content|%>
+      <div class="content_post">
+      <%= content.user.name %> <%= content.writing %>  <%=l content.created_at %>
+      </div>
+      <% end %></div>
     </div>
 
 
@@ -57,12 +50,6 @@
       <%= f.submit '投稿する', class:'contents-writing-btn'%>
       <% end %>
   </div>
-  <div class="bottom-contents">
-        <% @contents.each do |content|%>
-      <div class="content_post">
-      <%= content.user.name %> <%= content.writing %>  <%= content.created_at %>
-      </div>
-      <% end %></div>
   
 </div>
 </div>
