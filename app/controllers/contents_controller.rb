@@ -24,6 +24,6 @@ class ContentsController < ApplicationController
 
   private
   def contents_params
-    params.require(:content).permit(:writing).merge(user_id: current_user.id)
+    params.require(:content).permit(:writing, :iamge).merge(user_id: current_user.id)
   end
 end
