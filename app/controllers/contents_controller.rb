@@ -21,6 +21,17 @@ class ContentsController < ApplicationController
     end
   end
 
+  def checked
+    content = Content.find(params[:id])
+    if content.checked
+      content.update(checked: false)
+    else
+      content.update(checked: true)
+    end
+
+    item = Content.find(params[:id])
+    render json: { content: item }
+
 
   private
   def contents_params
