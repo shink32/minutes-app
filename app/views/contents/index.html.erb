@@ -26,7 +26,7 @@
       <% @meeting.title %>
         <div class="bottom-contents">
         <% @contents.each do |content|%>
-      <div class="content_post">
+      <div class="content_post" data-id=<%= content.id %> data-check=<% content.checked %>>
       <%= content.user.name %> <%= content.writing %>  <%=l content.created_at %>
       <%= image_tag content.image.variant(resize:'500x500'), class: 'message-image' if content.image.attached? %>
       </div>

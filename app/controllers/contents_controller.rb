@@ -30,8 +30,8 @@ class ContentsController < ApplicationController
     end
 
     item = Content.find(params[:id])
-    render json: { content: item }
-
+    render json:{ content: item }
+  end
 
   private
   def contents_params
