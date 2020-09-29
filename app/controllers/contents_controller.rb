@@ -30,10 +30,11 @@ class ContentsController < ApplicationController
     end
 
     item = Content.find(params[:id])
-    render json:{ content: item }
+    render json: { content: item }
   end
 
   private
+
   def contents_params
     params.require(:content).permit(:writing, :image).merge(user_id: current_user.id, checked: false)
   end

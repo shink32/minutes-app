@@ -27,8 +27,10 @@
         <div class="bottom-contents">
         <% @contents.each do |content|%>
       <div class="content_post" data-id=<%= content.id %> data-check=<% content.checked %>>
-      <%= content.user.name %> <%= content.writing %>  <%=l content.created_at %>
-      <%= image_tag content.image.variant(resize:'500x500'), class: 'message-image' if content.image.attached? %>
+        <div class="post-name"><%= content.user.name %></div>
+        <div class="post-content"><%= content.writing %></div>
+        <div class="post-date"><%=l content.created_at %></div>
+        <%= image_tag content.image.variant(resize:'500x500'), class: 'message-image' if content.image.attached? %>
       </div>
       <% end %></div>
     </div>
@@ -46,14 +48,18 @@
 
   <div class="bottom-form">
     下のフォーム
-    <%= form_with model: [@meeting, @content], local: true do |f| %>
-      <%= f.text_field :writing, placeholder: '記事を記載してください', class:'col-10'%>
+    <%= form_with model: [@meeting, @content], id: "form" do |f| %>
+      <%= f.text_field :writing, placeholder: '記事を記載してください', class:'col-10', id:"content"%>
     <label class="form-image">
       <span class="image-file">画像</span>
       <%= f.file_field :image, class: 'hidden' %>
     </label>
-      <%= f.submit '投稿する', class:'contents-writing-btn'%>
+      <%= f.submit '投稿する', id: "submit", class:'contents-writing-btn'%>
       <% end %>
+      
+  <div id="list">
+  </div>
+  
   </div>
   
 </div>

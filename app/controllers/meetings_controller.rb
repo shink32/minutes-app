@@ -10,7 +10,7 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     if @meeting.save
-      redirect_to root_path 
+      render :new
     else
       render :new
     end
@@ -31,10 +31,9 @@ class MeetingsController < ApplicationController
     end
   end
 
-
-
   private
+
   def meeting_params
-    params.require(:meeting).permit(:title, user_ids:[])
+    params.require(:meeting).permit(:title, user_ids: [])
   end
 end
