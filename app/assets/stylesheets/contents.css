@@ -28,3 +28,7 @@
   background-color: lemonchiffon;
   height: 60px;
 }
+
+div[data-check="true"] {
+  background: #585555d0;
+}

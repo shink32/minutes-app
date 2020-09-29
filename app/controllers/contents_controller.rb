@@ -21,9 +21,21 @@ class ContentsController < ApplicationController
     end
   end
 
+  def checked
+    content = Content.find(params[:id])
+    if content.checked
+      content.update(checked: false)
+    else
+      content.update(checked: true)
+    end
+
+    item = Content.find(params[:id])
+    render json: { content: item }
+  end
 
   private
+
   def contents_params
-    params.require(:content).permit(:writing, :image).merge(user_id: current_user.id)
+    params.require(:content).permit(:writing, :image).merge(user_id: current_user.id, checked: false)
   end
 end
