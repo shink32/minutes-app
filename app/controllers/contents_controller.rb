@@ -13,11 +13,17 @@ class ContentsController < ApplicationController
   def create
     @meeting = Meeting.find(params[:meeting_id])
     @content = @meeting.contents.new(contents_params)
-    if @content.save
-      redirect_to meeting_contents_path(@meeting)
-    else
-      @contents = @meeting.contents.includes(:user)
-      render :index
+    # render json:{ content: @content, user_name: @content.user.name }
+    respond_to do |format|
+      if @content.save
+        ActionCable.server.broadcast 'content_channel', content: @content 
+        format.html { redirect_to "contents#index" } 
+        format.json { render :show, status: :created, location: @content } 
+        format.js 
+      else
+        format.html { render :new } 
+        format.json { render json: @content.errors, status: :unprocessable_entity } 
+      end
     end
   end
 
@@ -36,6 +42,6 @@ class ContentsController < ApplicationController
   private
 
   def contents_params
-    params.require(:content).permit(:writing, :image).merge(user_id: current_user.id, checked: false)
+    params.require(:content).permit(:writing, images: []).merge(user_id: current_user.id, checked: false)
   end
 end
