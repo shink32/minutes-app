@@ -3,6 +3,8 @@ class ContentsController < ApplicationController
     @content = Content.new
     @meeting = Meeting.find(params[:meeting_id])
     @contents = @meeting.contents.includes(:user)
+    @user = @meeting.contents.name
+
     @meetings = Meeting.all
   end
 
@@ -18,7 +20,7 @@ class ContentsController < ApplicationController
       if @content.save
         ActionCable.server.broadcast 'content_channel', content: @content 
         format.html { redirect_to "contents#index" } 
-        format.json { render :show, status: :created, location: @content } 
+        format.json { render 'index.json.jbuilder', status: :created, location: @content } 
         format.js 
       else
         format.html { render :new } 

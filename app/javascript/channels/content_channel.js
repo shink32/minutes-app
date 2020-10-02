@@ -20,11 +20,12 @@ consumer.subscriptions.create("ContentChannel", {
   // テキストノードを新規作成したP要素に追加します．
   // node.appendChild(textnode); 
 
+  name = data.name
 
   const HTML = `
   <div class="content_post" data-id=${data.content.id}>
     <div class="post-name">
-      ${data.content.id}
+      ${name}
     </div>
     <div class="post-content">
       ${data.content.writing}
