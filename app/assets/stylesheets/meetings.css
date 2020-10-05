@@ -19,3 +19,12 @@
   font-size: 1em;
   justify-content: center;
 }
+
+
+.meeting-title {
+  font-size: 2em;
+  justify-content: center;
+  padding-left: 180px;
+  margin: 50px;
+  border-bottom:solid 2px slategray;
+}
