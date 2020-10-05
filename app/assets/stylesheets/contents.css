@@ -1,34 +1,80 @@
 .contents-header {
-  background-color: lightblue;
   height: 60px;
+  position: fixed;
+  z-index: 2;
+
 }
 
 .contents-middle {
   display: flex;
   height: 50vw;
 
+
 }
 
 .side-bar-left {
-  background-color: lightslategray;
+
   overflow: auto;
+  position: fixed;
+  padding-top: 10%;
+  background-color: rgb(1, 145, 113);
+  color: white;
+
+
 }
 
 .main-contents {
   /* background-color: mediumaquamarine; */
   overflow: auto;
+
+
 }
 
 .side-bar-right {
   background-color: lavender;
   overflow: auto;
+  position: fixed;
+  padding-top: 10%;
+  background-color: rgb(1, 145, 113);
+  color: white;
 }
 
 .bottom-form {
-  background-color: lemonchiffon;
   height: 60px;
+}
+
+.bottom-contents {
+  padding-top: 5%;
+
 }
 
 div[data-check="true"] {
   background: #585555d0;
+}
+
+#content {
+  padding-left: 100px;
+  margin-top: 20px;
+  margin-left: 240px;
+}
+
+#form {
+  background-color:  rgb(16, 83, 60);
+  color: white;
+}
+
+.image-file {
+  padding-left: 740px;
+}
+
+.content-all {
+  display: flex;
+}
+
+.content_post {
+  display: flex;
+}
+
+.post-name{
+  margin-left: 400px;
 }

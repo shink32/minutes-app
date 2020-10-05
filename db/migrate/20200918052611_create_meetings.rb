@@ -3,6 +3,7 @@ class CreateMeetings < ActiveRecord::Migration[6.0]
     create_table :meetings do |t|
       t.string :title
       t.string :detail
+      t.integer :time
       t.boolean :check
       t.timestamps
     end

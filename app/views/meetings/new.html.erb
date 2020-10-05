@@ -52,7 +52,16 @@
         <%= f.label :内容, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.text_area :detail, class: 'chat__room_name chat-room-form__input', placeholder: '議事録内容を記入してください'%>
+        <%= f.rich_text_area :content, class: 'chat__room_name chat-room-form__input', placeholder: '議事録内容を記入してください'%>
+      </div>
+    </div>
+
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :会議時間, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :time, class: 'chat__room_name chat-room-form__input', placeholder: '分数を記入してください'%>分
       </div>
     </div>
 

@@ -74,6 +74,8 @@
               <%= link_to meeting.title, meeting_contents_path(meeting) %>
             </h2>
             <h6 class="post-subtitle">
+              <%= link_to "事前共有確認", meeting_path(meeting)%>
+               /               
               <%= link_to "削除", meeting_path(meeting), method: :delete %>
             </h6>
             <p class="post-meta">Posted by

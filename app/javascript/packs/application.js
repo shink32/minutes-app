@@ -10,6 +10,9 @@ require("channels")
 require("../checked")
 // require("../memo")
 require("./preview")
+require("../stopwacth")
+
+//= require moment
 
 //= require ckeditor/init
 
