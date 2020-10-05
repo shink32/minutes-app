@@ -10,13 +10,12 @@
       <div class="create">
       <%= link_to "新規議事録作成", new_meeting_path %>
       </div>
-
       議事録一覧
       <div class="main-name">
         <% current_user.meetings.each do |meeting| %>
         <div class="meeting">
         <%= link_to meeting.title, meeting_contents_path(meeting) %>
-      </div>
+        </div>
        <% end %>
       </div>
     </div>
@@ -25,15 +24,23 @@
       内容表示
       <% @meeting.title %>
         <div class="bottom-contents">
-        <% @contents.each do |content|%>
-      <div class="content_post" data-id=<%= content.id %> data-check=<% content.checked %>>
-        <div class="post-name"><%= content.user.name %></div>
-        <div class="post-content"><%= content.writing %></div>
-        <div class="post-date"><%=l content.created_at %></div>
-        <%= image_tag content.image.variant(resize:'500x500'), class: 'message-image' if content.image.attached? %>
-      </div>
-      <% end %></div>
-    </div>
+          <% @contents.each do |content|%>
+            <div class="content_post" data-id=<%= content.id %> data-check=<% content.checked %> data-user-name=<% content.user.name %>>
+              <div class="post-name"><%= content.user.name %></div>
+              <div class="post-content"><%= content.writing %></div>
+              <div class="post-date"><%=l content.created_at %></div>
+              <div class="contensts">
+                <%= content.images.each do |image| %>
+                <%= image_tag image.variant(resize:'500x500'), class: 'message-image' if content.image.attached? %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <div id="new_message"></div>
+        </div>
+        <div id="list">
+        </div>
+     </div>
 
 
     <div class="col-2 side-bar-right">
@@ -52,14 +59,15 @@
       <%= f.text_field :writing, placeholder: '記事を記載してください', class:'col-10', id:"content"%>
     <label class="form-image">
       <span class="image-file">画像</span>
-      <%= f.file_field :image, class: 'hidden' %>
+      <%= f.file_field :images, name: 'message[images][]', id: 'content_image', class: 'hidden' %>
     </label>
       <%= f.submit '投稿する', id: "submit", class:'contents-writing-btn'%>
+      <div id="image-list"></div>
       <% end %>
       
-  <div id="list">
-  </div>
-  
+      <% @content.images.each do |image| %>
+        <%= image_tag image, class: 'images' %>
+        <% end %>
   </div>
   
 </div>
