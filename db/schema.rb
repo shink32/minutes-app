@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_09_23_095658) do
   create_table "meetings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "detail"
+    t.integer "time"
     t.boolean "check"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

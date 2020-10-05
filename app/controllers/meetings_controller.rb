@@ -22,6 +22,10 @@ class MeetingsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @meeting = Meeting.find(params[:id])
+  end
+
   def checked
     content = Content.find(params[:id])
     if content.checked
@@ -34,6 +38,7 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:title, :content, user_ids: [])
+    params.require(:meeting).permit(:title, :content, :time, user_ids: [])
   end
+
 end
