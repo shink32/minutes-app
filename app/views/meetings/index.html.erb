@@ -76,11 +76,12 @@
             <h6 class="post-subtitle">
               <%= link_to "事前共有確認", meeting_path(meeting)%>
                /               
+              <%#if user_signed_in? && current_user.id == @Meetings.id %>
               <%= link_to "削除", meeting_path(meeting), method: :delete %>
             </h6>
-            <p class="post-meta">Posted by
-              <a href="/">minutes.</a>
-               created_at <%=l meeting.created_at%></p>
+                <p class="post-meta">Posted by
+                  <a href="/">minutes.</a>
+                  created_at <%=l meeting.created_at%></p>
           </div>
           <hr>
         <% end %>
