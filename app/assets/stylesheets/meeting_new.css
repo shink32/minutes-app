@@ -122,6 +122,8 @@ select {
   background-color: #434a54;
   height: 80px;
   width: 100%;
+  box-shadow: 0 0 8px gray;
+  }
 }
 
 .field_with_errors{

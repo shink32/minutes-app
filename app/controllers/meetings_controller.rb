@@ -10,7 +10,7 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     if @meeting.save
-      render :new
+      redirect_to root_path
     else
       render :new
     end
