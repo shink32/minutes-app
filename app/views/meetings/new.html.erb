@@ -70,8 +70,8 @@
         <label class='chat-room-form__label' for='chat_room_チャットメンバー'>共有者</label>
       </div>
       <div class='chat-room-form__field--right'>
-        <select name="meeting[user_ids][]">
-          <option value="">議事録を共有するユーザーを選択してください</option>
+        <select name="meeting[user_ids][]" multiple="multiple">
+          <option value=""></option>
             <% User.all.where.not(id: current_user.id).each do |user| %>
              <option value=<%=user.id%>><%= user.name %></option>
           <% end %>
@@ -79,6 +79,7 @@
         <input name="meeting[user_ids][]" type="hidden" value=<%=current_user.id%>>
       </div>
     </div>
+
 
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'></div>
