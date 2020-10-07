@@ -3,7 +3,6 @@ class ContentsController < ApplicationController
     @content = Content.new
     @meeting = Meeting.find(params[:meeting_id])
     @contents = @meeting.contents.includes(:user)
-    @user = @meeting.contents.name
 
     @meetings = Meeting.all
   end
@@ -44,6 +43,6 @@ class ContentsController < ApplicationController
   private
 
   def contents_params
-    params.require(:content).permit(:writing, images: []).merge(user_id: current_user.id, checked: false)
+    params.require(:content).permit(:writing, :image).merge(user_id: current_user.id, checked: false)
   end
 end

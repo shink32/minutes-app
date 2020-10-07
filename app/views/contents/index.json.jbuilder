@@ -6,3 +6,5 @@ json.array!(@contents) do |content|
   # json.images content.images
   
 end
+
+json.test("hoge")

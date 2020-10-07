@@ -11,7 +11,7 @@ consumer.subscriptions.create("ContentChannel", {
   },
 
   received(data) {
-    console.log(data)
+
   // 新しいP要素を用意します．
   var list = document.getElementById("list");
   var node = document.createElement("p"); 
@@ -20,23 +20,16 @@ consumer.subscriptions.create("ContentChannel", {
   // テキストノードを新規作成したP要素に追加します．
   // node.appendChild(textnode); 
 
-  name = data.name
 
   const HTML = `
   <div class="content_post" data-id=${data.content.id}>
-    <div class="post-name">
-      ${name}
-    </div>
     <div class="post-content">
       ${data.content.writing}
     </div>
-    <div class="post-date">
-      ${data.content.created_at}
-    </div>
-    <div class="message-image">
-     ${data.content.images}
     </div>`;
-  list.insertAdjacentHTML("afterend", HTML);
+
+
+  list.insertAdjacentHTML("beforebegin", HTML);
 
   // DOM に新しく作られた要素とその内容を追加します 
   document.getElementById("new_message").appendChild(node);

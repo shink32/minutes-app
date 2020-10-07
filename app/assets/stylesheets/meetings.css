@@ -1,3 +1,4 @@
+
 .wrapper {
   display: flex;
 }
@@ -29,6 +30,26 @@
   border-bottom:solid 2px slategray;
 }
 
+.meeting {
+margin-bottom: 10px;
+}
+
+.create {
+  margin-bottom: 50px;
+}
+
+.contents-message {
+  margin-bottom: 30px;
+  border-bottom: solid 2px white;
+}
+
+.right-message {
+  margin-bottom: 30px;
+  border-bottom: solid 2px white;
+}
+
+
 .site-heading h1{
   font-family: 'Caveat', cursive;
 }
+

@@ -15,6 +15,9 @@
 
   overflow: auto;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 10%;
   background-color: rgb(1, 145, 113);
   color: white;
@@ -23,9 +26,14 @@
 }
 
 .main-contents {
-  /* background-color: mediumaquamarine; */
+  background-color:rgb(211 226 215 / 80%);
+  background-blend-mode:lighten;
   overflow: auto;
+  background: #02463d;
+  border: 4px solid rgb(129, 78, 2);
+  box-shadow: 2px 2px 2px 2px #020 inset;
 
+  color: white;
 
 }
 
@@ -58,12 +66,24 @@ div[data-check="true"] {
 }
 
 #form {
+  height: 80px;
   background-color:  rgb(16, 83, 60);
   color: white;
 }
 
+.form-image {
+  font-size: 10px;
+  padding: 5px;
+  width: 50px;
+  height: 35px;
+  margin: 10px 10px;
+}
+
+.hidden {
+  display: none;
+}
+
 .image-file {
-  padding-left: 740px;
 }
 
 .content-all {
@@ -72,12 +92,26 @@ div[data-check="true"] {
 
 .content_post {
   display: flex;
+  justify-content: space-between;
 }
 
 .post-name{
-  margin-left: 400px;
+
+}
+
+.post-content {
+  margin-left: 20px;
 }
 
 .timer {
   margin-top: 200px;
 }
+
+.post-right {
+  display: flex;
+}
+
+.post-left {
+  display: flex;
+}
+
