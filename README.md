@@ -1,5 +1,40 @@
 # README
 
+## アプリケーション名
+minutes.
+ー議事録アプリケーションー
+
+## アプリケーション概要
+会議等での文字のやり取りをまとめ、会議中に双方向で文字や画像の確認ができる
+アプリケーション。
+議事録をアプリケーションとして、共用の場に残すことで、未来に向けて行うことの整理、振り返りを可能にする。
+
+## URL
+https://minites-app.herokuapp.com/
+
+## テスト用アカウント
+
+
+## 利用方法
+
+## 目指した課題解決
+
+## 洗い出した要件
+
+## 実装した機能についてのGIFと説明
+
+## 実装予定の機能
+
+## データベース設計
+
+## ローカルでの動作方法
+
+
+
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
