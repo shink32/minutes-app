@@ -26,7 +26,7 @@
 }
 
 .main-contents {
-  background-color:rgb(211 226 215 / 80%);
+  background-color:rgb(211, 226, 215);
   background-blend-mode:lighten;
   overflow: auto;
   background: #02463d;
