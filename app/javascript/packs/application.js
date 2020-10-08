@@ -10,7 +10,7 @@ require("channels")
 require("../checked")
 // require("../memo")
 require("./preview")
-require("../stopwacth")
+// require("../stopwacth")
 
 //= require moment
 
