@@ -44,10 +44,8 @@ railsのActionCableのgemを使用。 Websoket通信。
 Ajax通信とは異なり、クライアント側とサーバー側が相互にリクエスト、レスポンスを行っている為、複数のユーザーが別の画面で、非同期で画面が更新される。 
 
 ### レスポンシブWebデザイン
-[![Image from Gyazo](https://i.gyazo.com/d25e8107916d90c71e95b8c09e3f7b19.gif)](https://gyazo.com/d25e8107916d90c71e95b8c09e3f7b19)
+[![Image from Gyazo](https://i.gyazo.com/d25e8107916d90c71e95b8c09e3f7b19.gif.row)](https://gyazo.com/d25e8107916d90c71e95b8c09e3f7b19)
 Bootstrapを使用。画面サイズに合わせて適正なデザインに変更。
-
-[![Image from Gyazo](https://i.gyazo.com/d25e8107916d90c71e95b8c09e3f7b19.gif)](https://gyazo.com/d25e8107916d90c71e95b8c09e3f7b19)
 
 ### リッチテキスト
 [![Image from Gyazo](https://i.gyazo.com/a9e5e98339fdc7aac64fb1ba9f419a58.png)](https://gyazo.com/a9e5e98339fdc7aac64fb1ba9f419a58)  
