@@ -38,10 +38,19 @@ PASS: 1111aaaa
 
 ## 実装した機能についてのGIFと説明
 
-###リアルタイム相互通信機能
-![Image from Gyazo](https://i.gyazo.com/929be8315ba3a52ddd26b9d2da3fa2b0.gif)](https://gyazo.com/929be8315ba3a52ddd26b9d2da3fa2b0)
-railsのActionCableのgemを使用。 Websoket通信。
-Ajax通信とは異なり、クライアント側とサーバー側が相互にリクエスト、レスポンスを行っている為、複数のユーザーが別の画面で、非同期で画面が更新される。  
+### リアルタイム相互通信機能
+[![Image from Gyazo](https://i.gyazo.com/929be8315ba3a52ddd26b9d2da3fa2b0.gif)](https://gyazo.com/929be8315ba3a52ddd26b9d2da3fa2b0)  
+railsのActionCableのgemを使用。 Websoket通信。  
+Ajax通信とは異なり、クライアント側とサーバー側が相互にリクエスト、レスポンスを行っている為、複数のユーザーが別の画面で、非同期で画面が更新される。 
+
+### レスポンシブWebデザイン
+[![Image from Gyazo](https://i.gyazo.com/d25e8107916d90c71e95b8c09e3f7b19.gif)](https://gyazo.com/d25e8107916d90c71e95b8c09e3f7b19)  
+Bootstrapを使用。画面サイズに合わせて適正なデザインに変更。
+
+### リッチテキスト
+[![Image from Gyazo](https://i.gyazo.com/a9e5e98339fdc7aac64fb1ba9f419a58.png)](https://gyazo.com/a9e5e98339fdc7aac64fb1ba9f419a58)  
+railsのActionTextを使用してリッチテキストフォームのの導入。  
+文字のサイズ変更や、下線等をレイアウトし、その見た目を反映させることができる。
 
 
 ## 実装予定の機能
@@ -52,6 +61,8 @@ Ajax通信とは異なり、クライアント側とサーバー側が相互に�
 
 
 ## データベース設計
+
+[![Image from Gyazo](https://i.gyazo.com/76e202153b57fdf4b71bebaebb556df1.png)](https://gyazo.com/76e202153b57fdf4b71bebaebb556df1)  
 
 ### users テーブル
 
