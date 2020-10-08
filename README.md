@@ -38,6 +38,11 @@ PASS: 1111aaaa
 
 ## 実装した機能についてのGIFと説明
 
+###リアルタイム相互通信機能
+![Image from Gyazo](https://i.gyazo.com/929be8315ba3a52ddd26b9d2da3fa2b0.gif)](https://gyazo.com/929be8315ba3a52ddd26b9d2da3fa2b0)
+railsのActionCableのgemを使用。 Websoket通信。
+Ajax通信とは異なり、クライアント側とサーバー側が相互にリクエスト、レスポンスを行っている為、複数のユーザーが別の画面で、非同期で画面が更新される。  
+
 
 ## 実装予定の機能
 ・リアルタイムで同時編集機能の実装。(Operational Transformationのアルゴリズムを使用検討)  
