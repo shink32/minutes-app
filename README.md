@@ -22,7 +22,7 @@ PASS: 1111aaaa
 トップページより、作成した議事録に入り、記入したい議事を記載していく。  
 
 ## 目指した課題解決
-社内会議において
+社内会議において  
 ・参加者が共通して利用できる場の提供により、共通認識を持つことができる。  
 ・全員の発言を視覚化することにより、権力者の主観による決定の回避。  
 ・会議時間の管理を行うことができる。
@@ -31,10 +31,10 @@ PASS: 1111aaaa
 
 |実装機能|目的|詳細|
 |:---|:---|:---|
-ユーザー管理機能｜ユーザー登録者のみアプリを使用可能にする。｜ユーザー登録後に新規議事録を作成できる。｜
-レスポンシブデザイン｜どこにいてもどの媒体でもアプリを使いやすくする。｜Bootstrapを用いたレスポンシブデザイン。｜
-リアルタイム相互通信機能｜zoom会議等で会議の参加者が別場所にいる際、逐一議事内容を確認できるようにする。｜ActionCarbleによるWebSocket通信。ユーザーがコメントを投稿した場合、他のユーザーでもリアルタイムに画面表示が切り替わる。｜
-リッチテキスト導入｜強調したい箇所を議事録のオーナーが変更できることで、会議の主題を明確にする。｜ActionTextによるリッチテキスト導入。｜
+ユーザー管理機能|ユーザー登録者のみアプリを使用可能にする。|ユーザー登録後に新規議事録を作成できる。|
+レスポンシブデザイン|どこにいてもどの媒体でもアプリを使いやすくする。|Bootstrapを用いたレスポンシブデザイン。|
+リアルタイム相互通信機能|zoom会議等で会議の参加者が別場所にいる際、逐一議事内容を確認できるようにする。|ActionCarbleによるWebSocket通信。ユーザーがコメントを投稿した場合、他のユーザーでもリアルタイムに画面表示が切り替わる。|
+リッチテキスト導入|強調したい箇所を議事録のオーナーが変更できることで、会議の主題を明確にする。|ActionTextによるリッチテキスト導入。|
 
 ## 実装した機能についてのGIFと説明
 
@@ -63,8 +63,8 @@ PASS: 1111aaaa
 | company_name          | string | null: false |
 
 #### Association
-has_many :meeting_users
-has_many :meetings, thorough: meeting_users
+has_many :meeting_users  
+has_many :meetings, thorough: meeting_users  
 had_many :contents
 
  
@@ -76,8 +76,8 @@ had_many :contents
 | check   | boolean | null: false |
 
 #### Association
-has_many :meeting_users
-has_many :users, thorough: meeting_users
+has_many :meeting_users  
+has_many :users, thorough: meeting_users  
 had_many :contents
 
 
@@ -89,8 +89,8 @@ had_many :contents
 | meeting   | references | null: false, foreign_key: true |
 
 #### Association
-belongs_to :user
-belongs_to :meeting
+belongs_to :user  
+belongs_to :meeting  
 
 
 ### contents テーブル
@@ -106,8 +106,8 @@ belongs_to :meeting
 
 
 #### Association
-belongs_to :user
-belongs_to :meeting
+belongs_to :user  
+belongs_to :meeting  
 
 ## ローカルでの動作方法
 ・Ruby 2.6.5  
