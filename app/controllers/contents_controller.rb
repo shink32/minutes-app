@@ -17,13 +17,13 @@ class ContentsController < ApplicationController
     # render json:{ content: @content, user_name: @content.user.name }
     respond_to do |format|
       if @content.save
-        ActionCable.server.broadcast 'content_channel', content: @content 
-        format.html { redirect_to "contents#index" } 
-        format.json { render 'index.json.jbuilder', status: :created, location: @content } 
-        format.js 
+        ActionCable.server.broadcast 'content_channel', content: @content
+        format.html { redirect_to 'contents#index' }
+        format.json { render 'index.json.jbuilder', status: :created, location: @content }
+        format.js
       else
-        format.html { render :new } 
-        format.json { render json: @content.errors, status: :unprocessable_entity } 
+        format.html { render :new }
+        format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end
   end
