@@ -2,7 +2,6 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("ContentChannel", {
   connected() {
-    console.log("connect!")
     // Called when the subscription is ready for use on the server
   },
 
