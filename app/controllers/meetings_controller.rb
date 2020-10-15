@@ -15,6 +15,7 @@ class MeetingsController < ApplicationController
       render :new
     end
   end
+  
 
   def destroy
     meeting = Meeting.find(params[:id])
