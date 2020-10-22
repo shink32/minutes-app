@@ -27,7 +27,6 @@ consumer.subscriptions.create("ContentChannel", {
     </div>
     </div>`;
 
-
   list.insertAdjacentHTML("beforebegin", HTML);
 
   // DOM に新しく作られた要素とその内容を追加します 

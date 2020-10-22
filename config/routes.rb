@@ -8,3 +8,4 @@ Rails.application.routes.draw do
   end
   get 'contents/:id', to: 'contents#checked'
 end
+
